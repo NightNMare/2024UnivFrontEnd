@@ -1,0 +1,91 @@
+header {
+    float: left;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.7em;
+    width: 10%;
+    align-content: center;
+    text-shadow: 3px 3px 3px gray;
+}
+
+nav {
+    background-color: antiquewhite;
+    width: 90%;
+    float: right;
+    text-align: center;
+    align-content: center;
+}
+
+section {
+    margin-top: 1em;
+    float: top;
+    text-align: center;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+    clear: both;
+    font-weight: bold;
+}
+
+#h1_title {
+    /* 드래그 막기 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+#h1_title:hover {
+    cursor: pointer;
+}
+
+#div_setting_box {
+    border: 1px solid black;
+    border-radius: 0.75em;
+    padding: 1em;
+    right: 2%;
+    position: absolute;
+    display: none;
+}
+
+#setting_img {
+    float: right;
+    width: 3em;
+    height: 3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#setting_img:hover {
+    cursor: pointer;
+}
+
+
+nav>span>p {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    color: lightslategray;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+nav>span>p:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#section_iframe {
+    margin: 1em;
+    width: 100%;
+}
+
+footer>p {
+    color: lightslategray;
+}

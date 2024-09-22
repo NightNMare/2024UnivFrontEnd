@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest</title>
+
+    <style>
+        .card {
+            float: left;
+        }
+    </style>
+</head>
+<!--    1. 본인 관심 분야 관련 유명인을 10명 이상 정리
+        2. 유명인을 클릭하면 외부 관련 소개 페이지로 이동
+        3. float right 속성 사용 -->
+
+<body>
+    <p>interest</p>
+    <div id="div_list"> </div>
+    <script>
+        var div_list = document.getElementById("div_list");
+        var list = [
+            { image: "https://picsum.photos/200/300?random=1", name: "1" },
+            { image: "https://picsum.photos/200/300?random=2", name: "2" },
+            { image: "https://picsum.photos/200/300?random=3", name: "3" },
+            { image: "https://picsum.photos/200/300?random=4", name: "4" },
+            { image: "https://picsum.photos/200/300?random=5", name: "5" },
+            { image: "https://picsum.photos/200/300?random=6", name: "6" },
+            { image: "https://picsum.photos/200/300?random=7", name: "7" },
+            { image: "https://picsum.photos/200/300?random=8", name: "8" },
+            { image: "https://picsum.photos/200/300?random=9", name: "9" },
+            { image: "https://picsum.photos/200/300?random=0", name: "0" }
+        ];
+        list.forEach((tmp) => {
+            var a = document.createElement('a');
+            var img = document.createElement('img');
+            var str = document.createElement('p');
+            str.innerText = tmp.name;
+            img.src = tmp.image;
+
+            // 바꾸기
+            a.href = tmp.image;
+
+            a.classList.add("card");
+            a.appendChild(img);
+            a.appendChild(str);
+            div_list.appendChild(a);
+        })
+    </script>
+</body>
+
+</html>
