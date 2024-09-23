@@ -43,7 +43,7 @@
     </section>
 
     <footer>
-        <p>Copyright © 2024 HHS All rights reserved. Tech University of Korea</p>
+        <p>Copyright © 2024 Lim All rights reserved. Tech University of Korea</p>
     </footer>
 
     <script>
@@ -88,9 +88,13 @@
         }
         function iframe_onload(e) {
             var iframeHeight = frame.contentDocument.body.scrollHeight;
-            console.log(frame.contentDocument.body.scrollHeight);
             frame.style.height = iframeHeight + 64 + "px";
         }
+        window.addEventListener("message", (event) => {
+            console.log(event.data);
+            frame.style.height = event + 64 + "px";
+
+        }, false)
     </script>
 </body>
 

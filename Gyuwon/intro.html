@@ -10,24 +10,115 @@
             margin: 0;
             padding: 0;
         }
+
+        #intro_img_right_arrow {
+            width: 5em;
+            height: 5em;
+            position: fixed;
+            right: 3%;
+        }
     </style>
 </head>
 <!--    1. 본인 소개 페이지 작성
         - 멀티미디어 (이미지와 동영상)과 리스트를 기본 사용 -->
 
 <body>
-    <p>안녕하세요. 저는 임규원입니다.</p>
-    <ul>
-        <li>자바</li>
-        <li>프론트엔드 프로그래밍</li>
-        <li>데이터베이스</li>
-        <li>컴퓨터 구조</li>
-        <li>4차 산업 혁명시대와 법</li>
-        <li>한국 근현대 역사기행</li>
-        <li>기술융합의 비즈니스 모델</li>
-    </ul>
-    <img src="https://picsum.photos/200/300?random=0" alt="asd">
-    <!-- <video src=""></video> -->
+    <div id="first_view">
+        <img src="media/default_image.jpg" alt="my_image">
+        <p>안녕하세요. 저는 임규원입니다.</p>
+    </div>
+    <div id="second_view">
+        <pre>
+            이름 : 임규원
+            국적 : 대한민국
+            생년월일 : 2002년 05월 11일
+            학력 : 한국공학대학교 2학년 재학중 (2024년 기준)
+            전공 : 컴퓨터공학부 소프트웨어전공
+            학번 : 2021158029
+        </pre>
+    </div>
+    <div id="third_view">
+        <ul>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>자바</li>
+            <li>프론트엔드 프로그래밍</li>
+            <li>데이터베이스</li>
+            <li>컴퓨터 구조</li>
+            <li>4차 산업 혁명시대와 법</li>
+            <li>한국 근현대 역사기행</li>
+            <li>기술융합의 비즈니스 모델</li>
+        </ul>
+    </div>
+    <div id="fourth_view">
+        <p>임시 4번</p>
+        <!-- <video src=""></video> -->
+    </div>
+    <img id="intro_img_right_arrow" src="media/right_arrow.png" alt="right_arrow">
+    <script>
+        var cur_page = 0;
+        var p1 = document.getElementById('first_view');
+        var p2 = document.getElementById('second_view');
+        var p3 = document.getElementById('third_view');
+        var p4 = document.getElementById('fourth_view');
+        p2.style.display = 'none';
+        p3.style.display = 'none';
+        p4.style.display = 'none';
+        var rightarrow = document.getElementById("intro_img_right_arrow");
+        rightarrow.addEventListener('load', onload);
+        rightarrow.addEventListener('click', Right_Arrow_Clicked);
+        function Right_Arrow_Clicked() {
+
+            switch (cur_page) {
+                case 0:
+                    p1.style.display = 'none'
+                    p2.style.display = 'block'
+                    cur_page++;
+                    break;
+                case 1:
+                    p2.style.display = 'none'
+                    p3.style.display = 'block'
+                    cur_page++;
+                    break;
+                case 2:
+                    p3.style.display = 'none'
+                    p4.style.display = 'block'
+                    cur_page++;
+                    break;
+                case 3:
+                    p4.style.display = 'none'
+                    p1.style.display = 'block'
+                    cur_page = 0;
+                    break;
+
+            }
+            window.parent.postMessage(document.body.scrollHeight, "*")
+        }
+        function onload() {
+            var bodyheight = document.body.scrollHeight;
+            rightarrow.style.top = bodyheight / 2 + 'px';
+        }
+
+    </script>
 </body>
 
 </html>

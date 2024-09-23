@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+    /*스크롤바 삭제*/
+    display: none;
+}
+
+head {
+    /*스크롤바 삭제*/
+    scrollbar-width: none;
+}
+
 header {
     float: left;
     text-align: center;
@@ -45,7 +55,7 @@ footer {
     border: 1px solid black;
     border-radius: 0.75em;
     padding: 1em;
-    right: 2%;
+    right: 5%;
     position: absolute;
     display: none;
 }
@@ -54,6 +64,7 @@ footer {
     float: right;
     width: 3em;
     height: 3em;
+    margin-right: 5px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
