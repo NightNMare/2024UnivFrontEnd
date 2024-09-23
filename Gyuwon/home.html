@@ -30,9 +30,11 @@
         </span>
         <img id="setting_img" onclick="setting_click()" src="media/icon_setting.png" alt="setting">
         <div id="div_setting_box">
-            <p>뭐 넣지</p>
-            <p>MFPB에 대하여</p>
-            <p>작성일</p>
+            <p>아직 미구현</p>
+            <p>MFPB은 My</p>
+            <p>Frontend</p>
+            <p>Programming</p>
+            <p>Blog</p>
             <p>About Us</p>
         </div>
 
@@ -91,9 +93,7 @@
             frame.style.height = iframeHeight + 64 + "px";
         }
         window.addEventListener("message", (event) => {
-            console.log(event.data);
-            frame.style.height = event + 64 + "px";
-
+            frame.style.height = (event.data + 64) + "px";
         }, false)
     </script>
 </body>

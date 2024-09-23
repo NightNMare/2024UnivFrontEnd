@@ -33,9 +33,9 @@ section {
 }
 
 footer {
+    clear: both;
     margin-top: 2em;
     text-align: center;
-    clear: both;
     font-weight: bold;
 }
 
@@ -55,7 +55,8 @@ footer {
     border: 1px solid black;
     border-radius: 0.75em;
     padding: 1em;
-    right: 5%;
+    right: 1.5em;
+    background-color: white;
     position: absolute;
     display: none;
 }
@@ -94,6 +95,7 @@ nav>span>p:hover {
 
 #section_iframe {
     margin: 1em;
+
     width: 100%;
 }
 
