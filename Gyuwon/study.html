@@ -5,39 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study</title>
-    <style>
-        #study_table,
-        td,
-        th {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+    <link rel="stylesheet" href="study.css">
 </head>
 <!-- 3. 학습 내용 중에서 중요 항목을 요약 (테이블 활용) -->
 
-<body>
-    <p>study</p>
-    <table id="study_table">
-        <caption>프론트엔드 프로그래밍</caption>
-        <tr>
-            <th colspan="2">html</th>
-            <th colspan="2">css</th>
-        </tr>
-        <tr>
-            <th>내용</th>
-            <th>메모</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-    </table>
+<!-- 수업에서 배운 내용을 요약 정리 (테이블 활용)
+챕터(제목), 소제목, 내용, 메모 형식으로 작성 -->
 
+<body>
+    <h1>학습 내용 요약</h1>
+
+    <table id="study_table">
+
+        <thead>
+            <tr>
+                <th>챕터(제목)</th>
+                <th>소제목</th>
+                <th>내용</th>
+                <th>메모</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7">HTML 기초</td>
+                <td>기초적인 태그들</td>
+                <td>HTML을 구성하는 기본적인 태그들</td>
+                <td>문서 구조를 만드는 핵심 요소</td>
+            </tr>
+            <tr>
+                <td>하이퍼링크</td>
+                <td>&lt;a&gt; : 하이퍼링크 생성</td>
+                <td>href 속성에 URL 삽입</td>
+            </tr>
+            <tr>
+                <td>이미지</td>
+                <td>&lt;img&gt; : 이미지 삽입</td>
+                <td>src 속성에 이미지 경로 삽입</td>
+            </tr>
+            <tr>
+                <td>테이블</td>
+                <td>&lt;table&gt; : 테이블 생성</td>
+                <td>표 형식의 데이터 구조화 가능</td>
+            </tr>
+            <tr>
+                <td>오디오 및 비디오</td>
+                <td>&lt;audio&gt;, &lt;video&gt; : 멀티미디어 추가</td>
+                <td>controls 속성으로 플레이어 제공</td>
+            </tr>
+            <tr>
+                <td>iframe</td>
+                <td>&lt;iframe&gt; : 다른 웹 페이지 삽입</td>
+                <td>외부 페이지 삽입</td>
+            </tr>
+            <tr>
+                <td>입력 양식</td>
+                <td>&lt;form&gt; : 사용자가 서버에 데이터를 전송 방식</td>
+                <td>GET은 쿼리스트링 방식, POST는 암호화 방식으로 서버에 데이터 전달</td>
+            </tr>
+
+            <tr>
+                <td rowspan="3">CSS 기초</td>
+                <td>선택자</td>
+                <td>CSS 선택자 이해 및 응용.</td>
+                <td>id, class, 태그 선택자 등 사용</td>
+            </tr>
+            <tr>
+                <td>박스 모델</td>
+                <td>박스 모델, 요소의 크기와 배치</td>
+                <td>마진, 패딩, 테두리 등</td>
+            </tr>
+            <tr>
+                <td>레이아웃</td>
+                <td>페이지 구조 설계</td>
+                <td>inline, block, inline-flex 등</td>
+            </tr>
+
+            <tr>
+                <td rowspan="5">JavaScript 기초</td>
+                <td>기본 특징</td>
+                <td>기본적인 특징과 웹에서의 역할</td>
+                <td>동적 웹 페이지 구현</td>
+            </tr>
+            <tr>
+                <td>변수 및 자료형</td>
+                <td>자료형 무관 var, let, const 사용
+                <td>var는 재할당, 재선언 가능<br>let은 재할당 가능, 재선언 불가능<br>const 재할당, 재선언 불가능</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>

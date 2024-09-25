@@ -1,0 +1,22 @@
+.card {
+    float: left;
+    margin: 1em;
+    padding: 1em;
+    padding-bottom: 0;
+    border: 2px solid black;
+    box-shadow: 6px 6px 6px lightslategray;
+}
+
+.card_image {
+    border: 1px solid black;
+    width: 12em;
+    height: 18em;
+}
+
+p {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 0.3em;
+}

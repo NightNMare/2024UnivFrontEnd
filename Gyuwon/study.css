@@ -1,0 +1,16 @@
+#study_table,
+td,
+th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.75em;
+}
+
+#study_table {
+    width: 90%;
+    text-align: center;
+}
+
+th {
+    background-color: whitesmoke;
+}

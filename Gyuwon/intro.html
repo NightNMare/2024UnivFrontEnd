@@ -5,88 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intro</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #first_view {
-            display: inline-flex;
-            margin: 1em;
-        }
-
-        #first_view>pre {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 2em;
-            line-height: 2em;
-            display: inline-flex;
-        }
-
-        #second_view {
-            margin: 1em;
-        }
-
-        #second_view>pre {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 2em;
-            line-height: 2em;
-            display: inline-block;
-        }
-
-        #second_view>img {
-            position: relative;
-            width: 12em;
-            height: 12em;
-            display: inline-flex;
-        }
-
-        #mypic {
-            width: 10em;
-            height: 13em;
-            border: 1px solid black;
-        }
-
-        #intro_img_right_arrow {
-            width: 5em;
-            height: 5em;
-            position: fixed;
-            right: 3%;
-        }
-
-        #third_view {
-            font-size: 1.5em;
-        }
-
-        #third_ul>li {
-            list-style: none;
-            line-height: 2em;
-            width: fit-content;
-            padding: 0.3em;
-            margin: 0.5em;
-            border: 1px solid black;
-        }
-
-        #third_ul>p {
-            font-weight: bold;
-        }
-
-        #fourth_view {
-            margin: 0.5em;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        #fourth_view>video {
-            border: 3px solid black;
-            margin: 0.5em;
-        }
-    </style>
+    <link rel="stylesheet" href="intro.css">
 </head>
-<!--    1. 본인 소개 페이지 작성
-        - 멀티미디어 (이미지와 동영상)과 리스트를 기본 사용 -->
 
 <body>
     <div id="first_view">
@@ -94,7 +14,7 @@
         <pre>안녕하세요. 임규원입니다.
 이 페이지에서는 저에 대해 소개하는 글을 적어보려고 합니다.
 이 다음으로는 저의 정보, 2학년 2학기에 수강중인 과목,
-그리고 개인적인 취미 하나 소개하려고 합니다.</pre>
+그리고 제가 좋아하는 것과 그 영상을 담았습니다.</pre>
     </div>
     <div id="second_view">
         <pre>이름 : 임규원
@@ -128,59 +48,11 @@
         <p>저는 해외, 특히 일본 여행을 다니는 것을 좋아합니다.</p>
         <p>그 때의 감성과 느낌을 공유하고자 여행 중 찍었던 영상을 올립니다.</p>
         <p>각각 됴코 타워 아래, 도쿄 타워 앞 시바공원입니다.</p>
-        <video class="video_fw" width="22%" controls src="media/Tokyo_Tower.mp4"></video>
-        <video class="video_fw" width="70%" controls src=" media/ShibaPark.mp4"></video>
+        <video class="video_fw" muted width="22%" controls src="media/Tokyo_Tower.mp4"></video>
+        <video class="video_fw" muted width="70%" controls src=" media/ShibaPark.mp4"></video>
     </div>
     <img id="intro_img_right_arrow" src="media/right_arrow.png" alt="right_arrow">
-    <script>
-        var cur_page = 0;
-        var p1 = document.getElementById('first_view');
-        var p2 = document.getElementById('second_view');
-        var p3 = document.getElementById('third_view');
-        var p4 = document.getElementById('fourth_view');
-        p2.style.display = 'none';
-        p3.style.display = 'none';
-        p4.style.display = 'none';
-        var rightarrow = document.getElementById("intro_img_right_arrow");
-        rightarrow.addEventListener('click', Right_Arrow_Clicked);
-        rightarrow.addEventListener('load', onload);
-        function Right_Arrow_Clicked() {
-
-            switch (cur_page) {
-                case 0:
-                    p1.style.display = 'none'
-                    p2.style.display = 'block'
-                    onload();
-                    cur_page++;
-                    break;
-                case 1:
-                    p2.style.display = 'none'
-                    p3.style.display = 'block'
-                    onload();
-                    cur_page++;
-                    break;
-                case 2:
-                    p3.style.display = 'none'
-                    p4.style.display = 'block'
-                    onload();
-                    cur_page++;
-                    break;
-                case 3:
-                    p4.style.display = 'none'
-                    p1.style.display = 'block'
-                    cur_page = 0;
-                    onload();
-                    break;
-
-            }
-            window.parent.postMessage(document.body.scrollHeight, "*")
-        }
-        function onload() {
-            var bodyheight = document.body.scrollHeight;
-            rightarrow.style.top = bodyheight / 2 + 'px';
-        }
-
-    </script>
+    <script src="intro.js"></script>
 </body>
 
 </html>
