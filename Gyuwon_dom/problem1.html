@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 2em;
+        }
+
+        .hint {
+            padding: 2em;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        #main_table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2em;
+        }
+
+        #main_table thead {
+            border: 2px solid black;
+        }
+
+        #main_table td,
+        th {
+            border: 1px solid black;
+
+            padding: 1em;
+            background-color: #00559918;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 class="hint"> book 객체 배열을 for 반복문을 사용하여 동적 테이블을 작성합니다. <br>
+        thead 부분을 먼저 작성하고 난 후 tbody 부분을 완성합니다. <br>
+        thead와 tbody를 생성할 때 document.write를 활용해야 합니다.
+    </h4>
+    <script>
+        const bookList = [{ isbn: '101', title: "HTML5", name: "버너스 리", publisher: "한빛 아카데미", pub_date: "2018/08/30", num_page: 544 },
+        { isbn: '102', title: "자바 스크립트", name: "브랜든 아이크", publisher: "생능", pub_date: "2021/09/25", num_page: 625 },
+        { isbn: '103', title: "리액트 프로그래밍", name: "조던 워커", publisher: "인피니티", pub_date: "2023/02/16", num_page: 234 },
+        { isbn: '104', title: "스프링 프레임워크", name: "로드 존슨", publisher: "동아 출판사", pub_date: "2022/04/06", num_page: 353 },
+        { isbn: '105', title: "플라스크", name: "홀로바티", publisher: "교보 문고", pub_date: "2024/10/16", num_page: 782 },
+        { isbn: '106', title: "솔리디티", name: "가빈 우드", publisher: "인사이트", pub_date: "2023/05/05", num_page: 134 },
+        { isbn: '107', title: "비트코인", name: "사토시", publisher: "에이콘 출판사", pub_date: "2021/01/30", num_page: 254 }
+        ];
+        document.write("<table id=\"main_table\"> <thead>");
+        document.write("<tr><th>ISBN</th><th>책 제목</th><th>지은이</th><th>출판사</th><th>발행 날짜</th><th>총 페이지</th></tr></thead><tbody>")
+
+        for (let i = 0; i < bookList.length; i++) {
+            document.write("<tr><td>" + bookList[i].isbn + "</td><td>" + bookList[i].title + "</td><td>" + bookList[i].name + "</td><td>" + bookList[i].publisher + "</td><td>" + bookList[i].pub_date + "</td><td>" + bookList[i].num_page + "</td></tr>");
+        }
+        document.write("</tbody></table>");
+    </script>
+</body>
+
+</html>

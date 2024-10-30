@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 2em;
+        }
+
+        #hint {
+            padding: 1em;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        body {
+            /* 아 이거 하나 하면 되는구나... */
+            text-align: center;
+        }
+
+        .hint {
+            margin: 2em;
+        }
+
+        #main_table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            text-align: center;
+            padding: 2em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #main_table thead {
+            border: 2px solid black;
+        }
+
+        #main_table td,
+        th {
+            border: 1px solid black;
+            padding: 1em;
+            background-color: #00559918;
+        }
+    </style>
+</head>
+
+<body>
+    <h4 id="hint"> book 객체 배열을 DOM 노드의 생성과 추가를 통해 동적 테이블을 작성합니다. <br>
+        반복문을 통해 각 row 요소에 포함되는 td 요소들을 생성하고(createElement), row 요소의 자식으로 추가(appendChild)합니다. <br>
+        그리고 table 요소에 row 요소를 자식 요소로 추가합니다. 최종적으로 table 요소를 id가 target인 요소에 자식 요소로 추가합니다.
+    </h4>
+    <button class="hint" onClick="table_rendering(bookList)">테이블 생성</button>
+    <div id="target"></div>
+    <script>
+        const bookList = [{ isbn: '101', title: "HTML5", name: "버너스 리", publisher: "한빛 아카데미", pub_date: "2018/08/30", num_page: 544 },
+        { isbn: '102', title: "자바 스크립트", name: "브랜든 아이크", publisher: "생능", pub_date: "2021/09/25", num_page: 625 },
+        { isbn: '103', title: "리액트 프로그래밍", name: "조던 워커", publisher: "인피니티", pub_date: "2023/02/16", num_page: 234 },
+        { isbn: '104', title: "스프링 프레임워크", name: "로드 존슨", publisher: "동아 출판사", pub_date: "2022/04/06", num_page: 353 },
+        { isbn: '105', title: "플라스크", name: "홀로바티", publisher: "교보 문고", pub_date: "2024/10/16", num_page: 782 },
+        { isbn: '106', title: "솔리디티", name: "가빈 우드", publisher: "인사이트", pub_date: "2023/05/05", num_page: 134 },
+        { isbn: '107', title: "비트코인", name: "사토시", publisher: "에이콘 출판사", pub_date: "2021/01/30", num_page: 254 }
+        ];
+        function table_rendering(bkList) {
+            [table, tbody] = default_table_rendering();
+            let div = document.getElementById("target");
+            let parent, child;
+            for (let i in bkList) {
+                parent = document.createElement("tr");
+                for (let j in bkList[i]) {
+                    child = document.createElement("td");
+                    child.innerHTML = bkList[i][j];
+                    parent.appendChild(child);
+                }
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].isbn;
+                // parent.appendChild(child);
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].title;
+                // parent.appendChild(child);
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].name;
+                // parent.appendChild(child);
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].publisher;
+                // parent.appendChild(child);
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].pub_date;
+                // parent.appendChild(child);
+                // child = document.createElement("td");
+                // child.innerHTML = bkList[i].num_page;
+                // parent.appendChild(child);
+
+                tbody.appendChild(parent);
+            }
+            div.appendChild(table);
+
+            window.parent.postMessage(document.body.scrollHeight, "*") // 버튼 클릭 시 바로 iframe 높이 조정
+        }
+        function default_table_rendering() {
+            const thead_th = ["ISBN", "책 제목", "지은이", "출판사", "발행 날짜", "총 페이지"];
+            const table = document.createElement("table");
+            table.id = "main_table";
+            let parent = document.createElement("thead");
+            table.appendChild(parent);
+            let child = document.createElement("tr");
+            parent.appendChild(child);
+            parent = child;
+            thead_th.map(i => {
+                child = document.createElement("th");
+                child.innerHTML = i;
+                parent.appendChild(child);
+            });
+            const tbody = document.createElement("tbody");
+            table.appendChild(tbody);
+            return [table, tbody];
+        }
+    </script>
+</body>
+
+</html>
